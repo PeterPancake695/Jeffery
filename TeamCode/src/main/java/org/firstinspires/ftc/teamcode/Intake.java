@@ -10,10 +10,10 @@ public class Intake {
 
     Servo servoArm, servoWrist, servoClaw;
 
-    public static double positionArmUp = 0.3, positionArmDown = 0.63, positionArmHovering = 0.5, positionArmTransfer = 0;
-    public static double positionWristHorizontal = 0.15, positionWristVertical = 0.45;
-    public static double positionWristDiagonalLeft = 0, positionWristDiagonalRight = 0.3;
-    public static double positionClawOpen = 0, positionClawClosed = 0;
+    public static double positionArmUp = 0.45, positionArmDown = 0.9, positionArmHovering = 0.8, positionArmTransfer = 0;
+    public static double positionWristHorizontal = 0.3, positionWristVertical = 0.63;
+    public static double positionWristDiagonalLeft = 0, positionWristDiagonalRight = 0.5;
+    public static double positionClawOpen = 0, positionClawClosed = 0.4;
 
     public enum arm {
         UP,

@@ -63,6 +63,7 @@ public class Robot{
             case HOVERING:
 
                 Intake.caseArm = Intake.arm.HOVERING;
+                Intake.caseClaw = Intake.claw.OPEN;
 
                 break;
             case PICKUP:
@@ -78,6 +79,7 @@ public class Robot{
                     Intake.caseArm = Intake.arm.HOVERING;
                 break;
             case DUNKING:
+                Intake.caseArm = Intake.arm.TRANSFER;
 
                 break;
         }
