@@ -53,7 +53,7 @@ public class Robot{
     public void changeState() {
         switch (states) {
             case RETRACTED:
-
+                Intake.caseSliderHorizontal = Intake.sliderHorizontal.RETRACTED;
                 Intake.caseWrist = Intake.wrist.HORIZONTAL;
                 Intake.caseArm = Intake.arm.UP;
                 Intake.caseClaw = Intake.claw.OPEN;
@@ -61,12 +61,13 @@ public class Robot{
 
                 break;
             case HOVERING:
-
+                Intake.caseSliderHorizontal = Intake.sliderHorizontal.EXTENDED;
                 Intake.caseArm = Intake.arm.HOVERING;
                 Intake.caseClaw = Intake.claw.OPEN;
 
                 break;
             case PICKUP:
+                Intake.caseSliderHorizontal = Intake.sliderHorizontal.EXTENDED;
                 if(pickupTimer.time(TimeUnit.MILLISECONDS) < 200)
                     Intake.caseArm = Intake.arm.DOWN;
 
@@ -79,6 +80,8 @@ public class Robot{
                     Intake.caseArm = Intake.arm.HOVERING;
                 break;
             case DUNKING:
+                Intake.caseSliderHorizontal = Intake.sliderHorizontal.TRANSFER;
+                Intake.caseWrist = Intake.wrist.HORIZONTAL;
                 Intake.caseArm = Intake.arm.TRANSFER;
 
                 break;
@@ -90,5 +93,6 @@ public class Robot{
         intake.runArm();
         intake.runWrist();
         intake.runClaw();
+        intake.runSlider();
     }
 }
